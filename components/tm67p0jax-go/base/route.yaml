@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: tm67p0jax-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: tm67p0jax-go 
+  name: tm67p0jax-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: tm67p0jax-go
+    weight: 100 
